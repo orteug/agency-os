@@ -263,6 +263,7 @@ AgencyOS is being built as a web application. The founding cohort (10 teams) get
 The same architecture adapts to any 3–10 person team running on context overload — property management, boutique mortgage, small law firms. The operational problem is the same.
 
 **hello@arielortiz.me** to join the founding cohort.
+**Landing page:** https://landing-agencyos.vercel.app/
 
 ---
 

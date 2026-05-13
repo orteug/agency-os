@@ -141,4 +141,5 @@ See `START_HERE.md` → "Connecting Your Tools" for details.
 
 AgencyOS is being built as a web application — persistent Agency Files in Supabase, shared team dashboard, live daily brief interface, and native connectors to Dotloop, Follow Up Boss, DocuSign, and MLS feeds. The founding cohort (10 teams) is open now at $199/month. The Claude Project you're testing is the early access tier.
 
+**Landing page:** https://landing-agencyos.vercel.app/
 **hello@arielortiz.me** to join the founding cohort or discuss the product roadmap.
