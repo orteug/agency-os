@@ -5,15 +5,33 @@ This document defines how the agency uses AgencyOS in the flow of a normal week.
 
 ---
 
+## The Two-Layer Architecture
+
+AgencyOS operates as two distinct layers with different roles:
+
+**The Claude Project is the doctrine layer.** It holds the intelligence — the emotional framework, the handoff contracts, the specialist rules, the Agency File schema. It reasons, drafts, qualifies, and advises. It is intentionally human-in-the-loop by design: every communication the system drafts is reviewed and sent by a person. Every decision the system surfaces is made by a person. This is not a limitation. It is the architecture.
+
+**The web application (Q3 2026) is the automation layer.** It handles delivery — the 8am brief sent automatically, the scheduled BD touches triggered by the system, the persistent case files updated in real time, the deadline alerts pushed to agents before they think to check. The web app removes friction from the human-in-the-loop model without removing the human.
+
+These two layers are not the same product at different stages. They are two parts of the same architecture designed to serve different needs. The Claude Project is available now. The web application is what it becomes.
+
+---
+
 ## Daily Rhythm
 
 ### Morning (Before Client Hours)
 
-**8:45 AM — Daily Brief Available**
-The daily deal desk produces the morning brief automatically. Every agent checks it before making their first client call.
+**8:45 AM — The Morning Ritual**
+
+The first agent to open Claude each morning runs the daily brief. One conversation. The brief is shared with the team — a screenshot, a forwarded message, a quick read on the team channel.
+
+To generate: Open the Claude Project and type `brief` or describe the current pipeline state. The daily deal desk synthesizes all active cases and produces the prioritized brief.
+
+This is an intentional daily practice, not an automated output. The team that reads the brief together starts the day aligned. The brief is only useful if it changes what the team does first.
 
 Each agent reads:
 - Their items in 🔴 URGENT and 🟡 ATTENTION
+- 📈 BD touches due today
 - Diana's queue (for awareness)
 - Any stale alerts on cases they own
 
@@ -22,19 +40,19 @@ Time required: 5-7 minutes.
 **9:00 AM — Action on Urgent Items**
 Urgent items from the brief are actioned first. Before outbound prospecting. Before admin. Before anything.
 
-The brief is only useful if it changes what the team does first.
-
 ---
 
 ### Active Hours (9 AM – 6 PM)
 
-**Lead intake:** New leads route through the orchestrator. Agent or Diana assigns ownership. Lead qualifier activates within 2 hours for hot leads.
+**Lead intake:** New leads route through the orchestrator. Agent or Diana assigns ownership. Lead qualifier activates within 2 hours for hot leads. Leads not ready to transact route to the BD Coordinator.
 
-**Client communication:** Agents review drafted communications from 03_client_communication before sending. Edits are encouraged — agents know their clients. Drafts are a starting point, not a final product.
+**Client communication:** Agents review drafted communications from 03_client_communication before sending. Edits are encouraged — agents know their clients. Drafts are a starting point, not a final product. The system drafts. The agent sends.
 
 **Property research requests:** Agent or client identifies a property. Agent submits research request to orchestrator. Research brief returned before the next showing.
 
 **Transaction updates:** TC specialist is updated after every significant touchpoint — lender call, inspection, amendment, document received. Do not let transaction state go stale.
+
+**BD touches:** When the brief flags a BD touch due, the BD Coordinator produces the touch brief. The agent routes it to 03_client_communication for a draft. The agent reviews and sends.
 
 ---
 

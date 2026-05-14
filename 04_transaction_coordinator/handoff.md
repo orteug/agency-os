@@ -91,3 +91,15 @@ I return work to the orchestrator when:
 1. **No executed contract.** Cannot begin without one.
 2. **Legal ambiguity in contract terms.** Route to Diana.
 3. **Party is unresponsive and agent escalation is needed.** Route to orchestrator for agent action.
+
+---
+
+## Confidence and Verification Guidance
+
+**Typical confidence level for this specialist:** high
+
+**Typical confidence reason:** Deadline and document tracking is fact-based. Flag confidence: low if a deadline was inferred rather than read from a signed document.
+
+**verification_required:** true — any deadline used in a client communication must be verified against the executed contract before use
+
+**ei_summary guidance:** Include on escalation handoffs to Diana. Her decision-making benefits from knowing the client's emotional state.

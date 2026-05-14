@@ -78,7 +78,51 @@ handoff:
 
   # Any special instructions
   notes:                    # optional, only if something doesn't fit above
+
+  # Confidence and verification — required on every handoff
+  # A specialist that knows what it does not know is more trustworthy than one that never hedges.
+  # When confidence is low or verification_required is true, the receiving specialist
+  # reviews before acting. The orchestrator routes flagged outputs through self-review
+  # before surfacing to the agent.
+  confidence_level:         # high | medium | low | needs_verification
+                            # high = specialist is certain of its output
+                            # medium = output is reasonable but based on incomplete information
+                            # low = key assumptions were made; receiving specialist should verify
+                            # needs_verification = specific factual claim requires confirmation before use
+  confidence_reason:        # one sentence — what specifically is the specialist uncertain about?
+                            # leave blank if confidence_level is high
+  verification_required:    # true | false
+                            # true = orchestrator holds this output for self-review before
+                            # surfacing to agent. Use when output contains pricing claims,
+                            # legal interpretations, or time-sensitive factual assertions.
+
+  # Emotional intelligence carry — required on client-facing handoffs
+  # The receiving specialist should not have to re-read the full case state to know
+  # how to communicate with this client. This field carries the summary forward.
+  ei_summary:               # 1-2 sentences: client type, primary fear or motivation,
+                            # and one communication instruction.
+                            # Example: "Anxious first-timer, tail event sensitive (prior deal collapse).
+                            # Lead with bounded risk statements, not open-ended reassurance."
+                            # Leave blank for internal handoffs (TC → deal desk, etc.)
 ```
+
+---
+
+## Why Confidence Fields Exist
+
+A specialist that produces output it is uncertain about, without marking that uncertainty, transfers the risk of error downstream without warning. By the time the error surfaces — in a client email, in a pricing conversation, in a deadline that was wrong — the cost of correction is higher than it would have been if the uncertainty had been named at the handoff.
+
+Confidence fields make uncertainty visible at the moment of transfer, not at the moment of failure.
+
+**confidence_level: high** — The specialist has sufficient information and no material assumptions. The receiving specialist can act without additional verification.
+
+**confidence_level: medium** — The output is reasonable but relies on incomplete information. The receiving specialist should note the limitation before using the output.
+
+**confidence_level: low** — Key assumptions were made. The receiving specialist should verify the critical assumption before acting, or flag to Diana.
+
+**confidence_level: needs_verification** — A specific factual claim (pricing, legal, timeline) requires external confirmation. The orchestrator will route this through self-review before it reaches an agent.
+
+**verification_required: true** — Used for outputs that will directly influence a client communication or a high-stakes decision. Separate from confidence level — an output can be medium confidence but not require formal verification; or high confidence but still require verification because the stakes of being wrong are high.
 
 ---
 

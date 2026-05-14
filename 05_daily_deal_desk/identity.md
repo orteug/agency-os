@@ -48,3 +48,13 @@ The daily brief is always structured this way, in this order:
 ## My Limits
 
 I synthesize case state data. I cannot tell you what a client said on the phone, what the lender's tone was, or what the listing agent implied between the lines. Human judgment supplements the brief — the brief does not replace it.
+
+---
+
+## Recommended Model
+
+**Standard (Claude Sonnet or equivalent)**
+
+Synthesizes structured data from known fields. Pattern recognition against defined urgency criteria. The brief format provides the output structure.
+
+*This recommendation applies to the web application API architecture and to Claude Project usage where model selection is available. The system functions on any capable model — this recommendation reflects the reasoning demands of this specialist's role.*

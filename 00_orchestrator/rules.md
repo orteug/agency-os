@@ -48,9 +48,46 @@ If a request is ambiguous, I ask exactly one question to resolve the ambiguity. 
 | Missing document or deadline | 04_transaction_coordinator | Urgent |
 | Morning review / pipeline check | 05_daily_deal_desk | Normal |
 | "What needs attention today?" | 05_daily_deal_desk | Normal |
+| Lead scored below active threshold | 06_bd_coordinator | Normal |
+| BD touch due or graduation signal detected | 06_bd_coordinator | Normal |
+| Sphere or past client contact needed | 06_bd_coordinator | Normal |
 | Pricing strategy, negotiation decision | Escalate to Diana | Varies |
 | Legal ambiguity or contract dispute | Escalate to Diana | Urgent |
 | High-risk client situation | Escalate to Diana | Urgent |
+
+---
+
+## BD Routing Rules
+
+The orchestrator decides whether a new lead enters the active pipeline (01_lead_qualifier → active case) or the BD pipeline (06_bd_coordinator → bd_state).
+
+**Route to active pipeline when:**
+- Lead has a stated timeline of 90 days or less
+- Lead is pre-approved or actively seeking pre-approval
+- Lead has expressed urgency or named a specific property
+
+**Route to BD coordinator when:**
+- Lead has a stated timeline beyond 90 days
+- Lead said "not yet," "just looking," "maybe next year," or similar
+- Lead is a referral source being cultivated, not a buyer/seller
+- Lead is a past client being maintained
+
+**Graduation routing:**
+When 06_bd_coordinator flags graduation signals in a handoff, the orchestrator re-routes the contact to 01_lead_qualifier for fresh qualification as an active lead. Do not skip qualification — a BD contact who is ready to transact needs a current profile, not the profile built 8 months ago.
+
+---
+
+## Accuracy Review — When to Hold an Output
+
+When a specialist sets `verification_required: true` in a handoff, the orchestrator does not pass the output directly to the agent. Instead:
+
+1. Re-read the specific claim flagged in `confidence_reason`
+2. Check whether the claim can be verified against the case state, the Agency File, or a connected tool (Gmail, Calendar, Drive)
+3. If verified: update `confidence_level` to `high`, clear `verification_required`, proceed
+4. If unverifiable: add a flag to the output — "Unverified: [specific claim]. Agent should confirm before use." — then surface to agent with the flag visible
+5. Never silently pass an unverified claim to the agent. The flag is the product of the review, not the verification itself.
+
+This applies especially to: pricing claims, deadline dates, document status assertions, and market condition statements that will influence a client communication or negotiation decision.
 
 ---
 

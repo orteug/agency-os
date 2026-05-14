@@ -90,3 +90,15 @@ When the orchestrator cannot route a request, it:
 4. **Escalates to Diana** if the request represents a situation outside the system's scope
 
 The orchestrator does not apologize for asking clarifying questions. Routing correctly is more valuable than routing fast.
+
+---
+
+## Confidence and Verification Guidance
+
+**Typical confidence level for this specialist:** high
+
+**Typical confidence reason:** N/A — outputs are clearly scoped and labeled.
+
+**verification_required:** false
+
+**ei_summary guidance:** Not required — this handoff is internal and does not involve client-facing output.

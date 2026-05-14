@@ -92,26 +92,42 @@ lead_profile:
 # EMOTIONAL PROFILE
 # (Set by 01_lead_qualifier. Updated by 03_client_communication.)
 # This field drives communication tone and escalation decisions.
+# Reference: EMOTIONAL_INTELLIGENCE.md for full framework and type definitions.
 # ============================================================
 emotional_profile:
-  client_type:              # first_time_buyer | repeat_buyer | investor | relocating_family |
-                            # luxury_buyer | emotionally_attached_seller | luxury_seller |
-                            # aggressive_negotiator | analytical_buyer | grieving_seller
+  client_type:              # See EMOTIONAL_INTELLIGENCE.md for all 14 types:
+                            # first_generation_homeowner | relocating_family |
+                            # anxious_first_timer | equity_moveup | analytical_optimizer |
+                            # investor_buyer | luxury_buyer |
+                            # life_stage_seller | distressed_seller | equity_rich_seller |
+                            # reluctant_seller | investor_seller | estate_seller | upgrading_seller
+
+  money_psychology_type:    # Primary PoM lens driving this client's behavior.
+                            # reasonable | rational | loss_averse | tail_event_sensitive |
+                            # safety_seeking | time_horizon_mismatch | compounding_oriented
+
+  financial_history_notes:  # Agent-populated. What do we know about their financial background?
+
+  primary_fear:             # losing_the_deal | overpaying | inspection_surprise |
+                            # financing_failure | making_wrong_decision | market_timing | other
+
+  primary_motivation:       # stability | investment_return | lifestyle | family_milestone |
+                            # financial_freedom | necessity | identity
+
+  tail_event_history:       # yes | no | unknown
+  tail_event_notes:         # if yes, describe briefly
 
   confidence:               # high | medium | low
-                            # How confident are they in the process and their decisions?
-
   anxiety_level:            # high | medium | low
-                            # How much reassurance do they need?
-
   responsiveness:           # fast (<2h) | normal (same day) | slow (1-2 days) | inconsistent
   decision_style:           # fast_mover | deliberate | needs_consensus | impulsive
   reassurance_required:     # high | medium | low
+  time_horizon:             # immediate (0-3mo) | near (3-6mo) | medium (6-18mo) | long (18mo+)
 
   communication_preference: # detailed | concise | visual | verbal | mixed
-  communication_notes:      # any specific notes on how to communicate with this client
+  communication_notes:
 
-  red_flags:                # list any concerning behavioral patterns
+  red_flags:
     - 
 
 
@@ -142,6 +158,30 @@ research_state:
   research_notes:           # anything important not captured above
 
 
+
+# ============================================================
+# BD STATE — BUSINESS DEVELOPMENT
+# (Set by 01_lead_qualifier when lead is not yet active.
+#  Maintained by 06_bd_coordinator. Read by 05_daily_deal_desk.)
+# Contacts not yet in the active pipeline.
+# Reference: EMOTIONAL_INTELLIGENCE.md for money_psychology_type definitions.
+# ============================================================
+bd_state:
+  status:                   # active_bd | dormant | sphere | past_client | referral_source
+
+  scheduled_touch:          # YYYY-MM-DD
+  touch_cadence:            # weekly | biweekly | monthly | quarterly | annual
+  last_bd_touch:            # YYYY-MM-DD
+  last_bd_touch_summary:    # one sentence
+
+  graduation_signals:
+    -
+
+  graduation_threshold:     # What moves this contact to active lead status?
+
+  relationship_depth:       # introduction | acquaintance | trusted | advocate
+
+  bd_notes:
 # ============================================================
 # COMMUNICATION LOG
 # (Updated by 03_client_communication after every touch.)

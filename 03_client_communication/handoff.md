@@ -112,3 +112,15 @@ I return work to the orchestrator when:
 1. **Emotional profile is missing** — I cannot calibrate tone without client type.
 2. **The situation requires a strategic decision** before communicating (pricing dispute, legal concern) — Diana must decide before I draft.
 3. **The communication involves information I do not have** — agent must provide specific details (offer terms, inspection specifics, lender details) before I can draft accurately.
+
+---
+
+## Confidence and Verification Guidance
+
+**Typical confidence level for this specialist:** high
+
+**Typical confidence reason:** Leave blank — drafts are clearly labeled for agent review before sending.
+
+**verification_required:** false — agent review before send is the verification step
+
+**ei_summary guidance:** Required on all outbound handoffs. Communication specialist carries EI summary to TC and deal desk so they understand client state.

@@ -93,3 +93,15 @@ I return work to the orchestrator when:
 
 3. **Request is for legal analysis, not research.** Contract interpretation, zoning questions, easement disputes.
    - Route to: Diana or external counsel. This is outside my scope.
+
+---
+
+## Confidence and Verification Guidance
+
+**Typical confidence level for this specialist:** medium
+
+**Typical confidence reason:** Market data is current to the austin-market-context.md freshness date. Specific comp claims should be verified against live MLS before use in negotiation.
+
+**verification_required:** true — pricing claims and market condition assertions require verification before client-facing use
+
+**ei_summary guidance:** Required on handoffs to 03_client_communication. Include client type and how to frame research findings for this specific buyer.

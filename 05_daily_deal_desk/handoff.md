@@ -79,3 +79,15 @@ task:
 ## The Brief Is Not the End
 
 The daily brief creates action items. Those action items route to specialists or agents. The brief closes the overnight gap between case state and operational awareness. It does not replace the specialists — it coordinates them.
+
+---
+
+## Confidence and Verification Guidance
+
+**Typical confidence level for this specialist:** high
+
+**Typical confidence reason:** Brief reflects case state as maintained by agents. If case state is stale, brief accuracy is limited by that staleness.
+
+**verification_required:** false
+
+**ei_summary guidance:** Not required — this handoff is internal and does not involve client-facing output.

@@ -113,11 +113,21 @@ AGENCY DAILY BRIEF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+📈 BD — BUSINESS DEVELOPMENT
+[If none: "No BD touches due today. Pipeline healthy."]
+• [Contact Name] — [Touch type] — [Reason: scheduled cadence | graduation signal detected | milestone triggered] — Owner: [Agent]
+
+Graduation signals detected:
+• [Contact Name] — [Signal observed] — Recommend: reclassify to active pipeline
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 📊 PIPELINE SNAPSHOT
 Active buyers: [N]  |  Active sellers: [N]
 Under contract: [N]  |  Closing this week: [N]
 New leads (last 24h): [N]  |  Stale leads: [N]
 Deals at risk: [N]
+BD pipeline: [N contacts]  |  Graduation candidates: [N]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

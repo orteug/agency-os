@@ -114,3 +114,15 @@ handoff:
     - "Client responds with frustration or concern — return to orchestrator before drafting further"
     - "Client's response changes the urgency assessment — re-route through orchestrator"
 ```
+
+---
+
+## Confidence and Verification Guidance
+
+**Typical confidence level for this specialist:** medium
+
+**Typical confidence reason:** Lead profile built from initial contact only. Financial history and tail event data are inferred, not confirmed.
+
+**verification_required:** false
+
+**ei_summary guidance:** Required. Lead qualifier is the primary setter of the EI profile. ei_summary must be populated on every outbound handoff.
