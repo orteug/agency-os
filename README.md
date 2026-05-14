@@ -1,4 +1,5 @@
 # AgencyOS
+
 ### The operational layer for Diana's team.
 
 > Run a high-touch boutique agency without operational chaos.
@@ -22,36 +23,45 @@ agency-os/
 ├── README.md                    ← you are here
 ├── START_HERE.md               ← new agent onboarding
 ├── OPERATING_RHYTHM.md         ← daily and weekly cadence
-├── HANDOFF_PROTOCOL.md         ← how work moves between specialists
-├── CASE_STATE_SCHEMA.md        ← how operational reality is preserved
+├── HANDOFF_PROTOCOL.md         ← how work moves between specialists  [contract 1]
+├── CASE_STATE_SCHEMA.md        ← how operational reality is preserved [contract 2]
+├── EMOTIONAL_INTELLIGENCE.md   ← how people relate to money          [contract 3]
 ├── TEAM_ROLES.md               ← human ownership and escalation paths
 │
 ├── 00_orchestrator/            ← front door; routes every request
-├── 01_lead_qualifier/          ← turns inquiries into lead profiles
+├── 01_lead_qualifier/          ← turns inquiries into lead + EI profiles
 ├── 02_property_research/       ← interpreted property and market briefs
 ├── 03_client_communication/    ← voice-matched drafts for agent review
 ├── 04_transaction_coordinator/ ← deadline tracking and risk management
 ├── 05_daily_deal_desk/         ← morning brief and operational awareness
+├── 06_bd_coordinator/          ← long-pipeline relationship management
 │
-├── examples/                   ← four complete end-to-end flows
+├── profiles/                   ← agent communication profiles
+├── examples/                   ← five complete end-to-end flows
 └── templates/                  ← blank templates for case state, briefs, escalations
 ```
 
 ---
 
-## The Core Architecture Decision
+## The Three Root Contracts
 
-Most multi-agent systems pass work through handoffs. We use two distinct contracts:
+AgencyOS is built on three architectural contracts. Every specialist reads all three before acting.
 
 **HANDOFF_PROTOCOL.md** — moves work between specialists. Tells the next specialist what to do.
 
-**CASE_STATE_SCHEMA.md** — preserves operational reality. Tells every specialist what is true.
+**CASE_STATE_SCHEMA.md** — preserves operational reality. Tells every specialist what is true about every deal.
 
-These are different things. The handoff says "here's the task." The case state says "here's everything we know about this client and this deal."
+**EMOTIONAL_INTELLIGENCE.md** — defines how people relate to money. Tells every specialist how to read and respond to the human being in the transaction.
 
-> **Handoffs move work. Case state preserves reality.**
+> *Handoffs move work. Case state preserves reality. Emotional intelligence determines how it lands.*
 
-This separation is what prevents context drift — the failure mode where specialists operate from conflicting or stale assumptions. Every specialist reads the same case state before acting. Every specialist updates the case state after acting.
+Most multi-agent systems use one contract or two. The third contract is what makes AgencyOS different. A research brief written for a relocating family, an anxious first-timer, and an investor presents the same property differently — because those three people are not the same kind of buyer. The same data, filtered through different money psychology, produces different guidance.
+
+**EMOTIONAL_INTELLIGENCE.md** draws on Morgan Housel's *The Psychology of Money* to formalize the behavioral finance principles that govern real estate decision-making: why reasonable beats rational, why loss aversion is asymmetric in seller negotiations, why tail events dominate a buyer's risk perception, why room for error is a psychological need not a financial one.
+
+Fourteen client types. Seven behavioral finance principles. One framework that every specialist applies.
+
+This separation prevents context drift — the failure mode where specialists operate from conflicting or stale assumptions. Every specialist reads the same case state before acting. Every specialist updates the case state after acting.
 
 ---
 
@@ -106,16 +116,17 @@ Purchase agreement executed
 
 ---
 
-## The Six Specialists
+## The Seven Specialists
 
 | Specialist | Job | Talks To |
 |------------|-----|----------|
 | 00 Orchestrator | Routes every request; initializes cases | All specialists |
-| 01 Lead Qualifier | Turns inquiries into lead + emotional profiles | 03 Communication |
+| 01 Lead Qualifier | Turns inquiries into lead + EI profiles | 03 Communication |
 | 02 Property Research | Interpreted briefs on properties and markets | 03 Communication |
-| 03 Client Communication | Voice-matched drafts adapted to client type | Agent (for review) |
+| 03 Client Communication | Voice-matched drafts adapted to EI profile | Agent (for review) |
 | 04 Transaction Coordinator | Deadline tracking, document status, risk escalation | 03 Communication, 05 Daily |
-| 05 Daily Deal Desk | Morning brief, stale detection, Diana's queue | All specialists |
+| 05 Daily Deal Desk | Morning brief, BD touches due, Diana's queue | All specialists |
+| 06 BD Coordinator | Long-pipeline relationship management; graduation detection | 00 Orchestrator, 03 Communication |
 
 ---
 
@@ -127,7 +138,8 @@ Every morning, the daily deal desk produces a brief that tells the team:
 - 🟡 **ATTENTION** — What to monitor
 - 🟢 **IN PROGRESS** — What's healthy (visibility only)
 - 📋 **DIANA'S QUEUE** — Decisions only Diana can make
-- 📊 **PIPELINE SNAPSHOT** — Numbers
+- 📈 **BD** — Business development touches due today; graduation signals detected
+- 📊 **PIPELINE SNAPSHOT** — Active deals, BD pipeline, graduation candidates
 - 🔔 **STALE ALERTS** — Clients not contacted in too long
 
 See `examples/daily_brief_example.md` for a real-looking brief across five active cases.
@@ -149,18 +161,19 @@ No vague summaries. No forwarded emails. Structured contracts.
 
 ---
 
-## Client Emotional State — A First-Class Field
+## Emotional Intelligence — The Third Contract
 
-The case state includes `emotional_profile.client_type` with documented types:
+The `EMOTIONAL_INTELLIGENCE.md` document formalizes how people relate to money in real estate decisions. It is a first-class architectural contract, not a data dictionary.
 
-- First-time buyer (needs reassurance, education)
-- Relocating family (needs timeline management)
-- Investor (needs data, not emotion)
-- Emotionally attached seller (needs acknowledgment before practicalities)
-- Luxury client (needs polish and detail)
-- Aggressive negotiator (needs directness)
+Fourteen client types — seven buyer, seven seller — each mapped to behavioral finance principles drawn from Morgan Housel's *The Psychology of Money*:
 
-This field travels through every specialist. The communication specialist uses it to calibrate tone. The transaction coordinator uses it in escalation decisions. The daily deal desk uses it to assess communication risk.
+**Buyer types:** First-Generation Homeowner, Relocating Family, Anxious First-Timer, Equity Move-Up, Analytical Optimizer, Investor, Luxury Buyer
+
+**Seller types:** Life Stage Seller, Distressed Seller, Equity-Rich Seller, Reluctant Seller, Investor Seller, Estate Seller, Upgrading Seller
+
+Each type has a `money_psychology_type`, a `primary_fear`, a `primary_motivation`, and specific communication guidance. The case state now also carries `tail_event_history` — prior financial losses or deal collapses that shape how a client reads every piece of information in the current transaction.
+
+The EI profile travels through every specialist. The same inspection report produces a different brief for an Anxious First-Timer than for an Analytical Optimizer. The same price reduction is framed differently for a Loss-Averse Seller than for an Equity-Rich Seller making a strategic move.
 
 The same deal update produces different emails depending on who is receiving it. That is not a feature. That is the product.
 
