@@ -38,7 +38,7 @@ A structured escalation to 00_orchestrator with:
 **For cold leads:**
 A handoff to 03_client_communication with:
 - Low priority designation
-- Single-touch nurture communication request
+- Single-touch BD communication request
 - Follow-up cadence recommendation
 
 ---

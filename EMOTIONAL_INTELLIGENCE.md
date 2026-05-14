@@ -215,4 +215,4 @@ This document should be updated when:
 Every update should be dated and noted. This is a living document, not a spec frozen at launch.
 
 ---
-*EMOTIONAL_INTELLIGENCE.md is a root-level contract. Changes to this document propagate to all specialist behavior. Review all 6 specialist rules.md files when updating.*
+*EMOTIONAL_INTELLIGENCE.md is a root-level contract. Changes to this document propagate to all specialist behavior. Review all 7 specialist rules.md files when updating.*

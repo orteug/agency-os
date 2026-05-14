@@ -36,8 +36,14 @@ lead_profile:
 
 emotional_profile:
   client_type: relocating_family
+  money_psychology_type: time_horizon_mismatch
+  primary_fear: market_timing
+  primary_motivation: family_milestone
+  tail_event_history: unknown
+  confidence: medium
   anxiety_level: medium
   responsiveness: fast
+  time_horizon: immediate
   communication_preference: concise
   communication_notes: "Hard July 1 deadline. Out-of-state — limited ability to tour in person. Will need video tour support."
 
@@ -151,9 +157,11 @@ research_state:
 
 By the time the agent walks into Thursday's showing, the case state contains:
 - A complete lead profile (urgency, financing, timeline, constraints)
-- An emotional profile (client type, communication preference, anxiety level)
+- An emotional profile with EI fields: client type, money psychology type, primary fear and motivation, communication preference
 - A property research brief with negotiation leverage pre-calculated
 - A full communication log showing two prior touches and client responsiveness
 - A risk flag (relocation timeline) that is visible in the daily brief
+
+The `money_psychology_type: time_horizon_mismatch` field means every specialist knows Marcus and Elena are making a decision compressed by an external deadline — not a deliberate timing choice. The research brief and pre-showing communication above reflect that frame: timeline management is front-loaded, not buried.
 
 No reconstruction. No "what do I know about these clients again?" The agent walks in prepared.

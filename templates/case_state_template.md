@@ -41,12 +41,19 @@ lead_profile:
     - [constraint]
 
 emotional_profile:
-  client_type: [see CASE_STATE_SCHEMA.md for types]
+  client_type: [first_generation_homeowner | relocating_family | anxious_first_timer | equity_moveup | analytical_optimizer | investor_buyer | luxury_buyer | life_stage_seller | distressed_seller | equity_rich_seller | reluctant_seller | investor_seller | estate_seller | upgrading_seller]
+  money_psychology_type: [reasonable | rational | loss_averse | tail_event_sensitive | safety_seeking | time_horizon_mismatch | compounding_oriented]
+  financial_history_notes: [what do we know about their financial background]
+  primary_fear: [losing_the_deal | overpaying | inspection_surprise | financing_failure | making_wrong_decision | market_timing | other]
+  primary_motivation: [stability | investment_return | lifestyle | family_milestone | financial_freedom | necessity | identity]
+  tail_event_history: [yes | no | unknown]
+  tail_event_notes: [if yes, describe briefly]
   confidence: [high | medium | low]
   anxiety_level: [high | medium | low]
   responsiveness: [fast | normal | slow | inconsistent]
   decision_style: [fast_mover | deliberate | needs_consensus | impulsive]
   reassurance_required: [high | medium | low]
+  time_horizon: [immediate | near | medium | long]
   communication_preference: [detailed | concise | visual | verbal | mixed]
   communication_notes: [any specific notes]
   red_flags:
@@ -87,6 +94,18 @@ escalation:
   escalation_reason: [blank if no]
   escalation_urgency: [blank if no]
   escalation_resolved: [yes | no]
+
+bd_state:
+  status: [active_bd | dormant | sphere | past_client | referral_source]
+  scheduled_touch: [YYYY-MM-DD]
+  touch_cadence: [weekly | biweekly | monthly | quarterly | annual]
+  last_bd_touch: [YYYY-MM-DD]
+  last_bd_touch_summary: [one sentence]
+  graduation_signals:
+    - [signal if any]
+  graduation_threshold: [what moves this contact to active lead status]
+  relationship_depth: [introduction | acquaintance | trusted | advocate]
+  bd_notes:
 
 operational:
   next_human_action: [specific action]

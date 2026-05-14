@@ -11,13 +11,14 @@ Diana's test: you should be able to run your first client interaction using this
 
 AgencyOS is the operating layer for this team. It is not software. It is not a chatbot. It is a set of AI specialists organized into Claude projects that help you do your job faster and more consistently.
 
-Each specialist handles one part of the workflow:
+Seven specialists handle one part of the workflow each:
 - **Orchestrator** — Where everything starts. Route your request here.
 - **Lead Qualifier** — Turns new inquiries into actionable lead profiles
 - **Property Research** — Deep research briefs on properties and neighborhoods
 - **Client Communication** — Drafts emails and texts in the voice of the assigned agent
 - **Transaction Coordinator** — Tracks every deadline and document once you're under contract
 - **Daily Deal Desk** — Your morning brief. Tells you what matters today.
+- **BD Coordinator** — Manages long-pipeline relationships; surfaces graduation signals
 
 ---
 

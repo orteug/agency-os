@@ -31,6 +31,12 @@ This document defines the human ownership layer of AgencyOS. Every case has an a
 - Property research requests
 - All significant client decisions escalate to Diana or senior agent
 
+**06 BD Coordinator**
+Owned by: Diana (primary) and assigned agent
+Responsibilities: Long-pipeline relationship management, BD touch scheduling,
+graduation signal detection, referral source cultivation
+Escalation path: Orchestrator (graduation reclassification), Client Communication (touch due)
+
 ---
 
 ## Decision Ownership Matrix

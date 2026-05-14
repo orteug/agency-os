@@ -3,7 +3,7 @@
 
 > **Handoffs move work. Case state preserves reality.**
 >
-> The case state schema tells every specialist what is true.
+> The Agency File tells every specialist what is true.
 > This protocol tells every specialist how to pass work along.
 > These are different things. Both are required.
 

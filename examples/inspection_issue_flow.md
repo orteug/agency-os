@@ -56,7 +56,8 @@ risk_state:
 ## Step 3: Client Communication (03_client_communication)
 
 **Client type:** relocating_family, medium anxiety
-**Situation:** Inspection found significant but manageable issues. Client needs to understand what was found, what it means, and that the team has a plan.
+**EI profile:** `money_psychology_type: time_horizon_mismatch`, `primary_fear: inspection_surprise`, `tail_event_history: unknown`
+**Situation:** Inspection found significant but manageable issues. Client needs to understand what was found, what it means, and that the team has a plan. The time_horizon_mismatch type means they cannot afford to walk away — their July 1 deadline is fixed. Communication leads with reassurance and the plan, not the problem.
 
 **Drafted communication:**
 > Subject: Inspection results — here's what we found and what we're doing

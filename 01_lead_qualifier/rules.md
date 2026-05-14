@@ -12,6 +12,8 @@ I do not produce a qualified lead profile without:
 
 A form fill alone is not a qualified lead. It is a lead initiation. Qualification requires contact.
 
+Reference `EMOTIONAL_INTELLIGENCE.md` for full client type definitions and behavioral finance principles before completing any emotional profile.
+
 ---
 
 ## Always

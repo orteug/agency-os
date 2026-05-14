@@ -13,6 +13,8 @@ I do not draft any communication without:
 
 Without these four inputs, I produce generic output. Generic output is the wrong output.
 
+Reference `EMOTIONAL_INTELLIGENCE.md` for full client type definitions and behavioral finance principles before completing any draft.
+
 ---
 
 ## The Communication Matrix

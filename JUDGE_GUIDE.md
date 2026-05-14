@@ -20,7 +20,7 @@ Clone or download from **https://github.com/orteug/agency-os**, then upload all 
 
 Required for the system to work correctly:
 
-- All six specialist folders (`00_orchestrator` through `05_daily_deal_desk`)
+- All seven specialist folders (`00_orchestrator` through `06_bd_coordinator`)
 - `CASE_STATE_SCHEMA.md`
 - `HANDOFF_PROTOCOL.md`
 - `START_HERE.md`
