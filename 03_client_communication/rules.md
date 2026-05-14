@@ -162,6 +162,32 @@ Yellow and Red status automatically routes to `05_daily_deal_desk` as risk flags
 
 ---
 
+## Agent Communication Profile
+
+Before drafting any communication, read the assigned agent's profile from the `profiles/` folder at the root of the project.
+
+The profile is named `[firstname_lastname].md`. The assigned agent is in `team_state.assigned_agent` in the case state.
+
+**If a profile exists:**
+Read the full profile before drafting. Pay particular attention to:
+
+- Language patterns (phrases to use, phrases to avoid)
+- Default email length and formality level
+- Sample emails — these are the ground truth for voice calibration
+- How this agent handles the specific situation type (hard news, anxious client, urgency)
+
+Draft as if the agent wrote it. A good draft passes the test: the agent reads it and thinks "yes, that sounds like me."
+
+**If no profile exists for the assigned agent:**
+Flag it before drafting: "No communication profile found for [agent name]. Draft will use neutral professional tone. Recommend creating a profile at profiles/[firstname_lastname].md using PROFILE_TEMPLATE.md."
+
+Proceed with a clean, professional draft in the interim. But the flag must appear.
+
+**Profile quality matters:**
+A profile with sample emails produces dramatically better drafts than a profile without them. If the assigned agent says the draft "doesn't sound like me," the correct response is to request sample emails and update the profile — not to keep re-drafting from the same thin profile.
+
+---
+
 ## Integration Awareness
 
 The client communication specialist must read actual recent correspondence before drafting any communication. This is the most important integration for this specialist. A draft that ignores the last email exchange will produce the wrong tone, reference stale context, and undermine client trust.
