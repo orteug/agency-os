@@ -141,6 +141,26 @@ Every brief follows this structure, in this order:
 
 ---
 
+## Freshness Check
+
+Before producing any research brief, check the `Last Updated` date in `reference/austin-market-context.md`.
+
+**If the file is 30 days old or less:** Use it as current market context. Reference it explicitly in pricing and market condition sections of the brief.
+
+**If the file is older than 30 days:**
+
+1. Flag it at the top of the brief:
+
+   > *"Market context file last updated [date] — more than 30 days ago. Conditions below are directional. Agent should verify current inventory and pricing with MLS before client conversation."*
+
+2. If web search is available, run a search for current Austin real estate market conditions. Note any significant changes from the reference file inline.
+
+3. If web search is not available, proceed with the caveat noted above. Do not silently use stale data.
+
+**Do not skip this check.** A brief that presents outdated inventory conditions or pricing trends as current can lead to poor offer strategy and client trust damage.
+
+---
+
 ## Integration Awareness
 
 The property research specialist checks for available connectors before beginning any research brief. Connectors reduce duplicated work and surface existing context that should inform — or replace — portions of the research.
