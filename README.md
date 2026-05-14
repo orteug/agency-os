@@ -242,6 +242,28 @@ Because the system is more trustworthy when it knows its limits. A specialist th
 
 ---
 
+## What We Didn't Build and Why
+
+**No inbox.md front door.**
+Several implementations route everything through a single intake file before the orchestrator touches it. We skipped it. The orchestrator handles classification and routing in the same operation. An inbox adds a step without adding intelligence.
+
+**No shared artifact files per case.**
+An alternative pattern writes specialist outputs (lead cards, research briefs, deal files) as separate files in a shared folder. We use one canonical Agency File per case instead. Distributed artifacts create synchronization problems — when specialists write to different files, consistency depends on update discipline that breaks under pressure. One state object is always coherent.
+
+**No dedicated market intelligence specialist.**
+We considered a 06_market_intelligence/ folder. Built a freshness check and reference file in 02_property_research instead. Market intelligence isn't a separate workflow — it's context for research. A reference file with a 30-day staleness protocol serves the same function with less routing overhead.
+
+**No autonomous agent runtime.**
+No LangGraph, no CrewAI, no self-orchestrating loops. Diana's team is the coordination layer. Claude is the specialist. Human-in-the-loop is the architecture, not a workaround. This holds for the web app too — the system drafts and surfaces, humans decide and send.
+
+**No CRM replacement.**
+Some approaches try to replicate contact management inside the ICM system. AgencyOS sits alongside whatever Diana already uses. The Agency File holds operational transaction state, not contact history. The web app will connect to Follow Up Boss and Dotloop via API — not replace them.
+
+**No JSON envelopes on handoffs.**
+Structured JSON handoff contracts are precise but brittle. Agents read and write handoffs under time pressure. YAML for the Agency File, plain English for handoff instructions. Human-readable formats reduce errors at the points where errors are most costly.
+
+---
+
 ## What Would Be Added Next
 
 With another week: the web application. Persistent Agency Files in Supabase, the daily brief as a live dashboard, and native connectors to Dotloop, Follow Up Boss, DocuSign, and MLS feeds — the real estate tools that aren't in the Claude connector directory yet. The Agency File schema maps directly to a Supabase table. The specialist files become the system instructions layer of the application. The repo is the doctrine. The app is the building.
